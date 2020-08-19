@@ -24,7 +24,18 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src:
+          'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+      },
+      { src: 'https://use.fontawesome.com/releases/v5.3.1/js/all.js' },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/assets/css/waloo.css' },
+      { rel: 'stylesheet', href: '/assets/css/main.css' }
+    ],
   },
   /*
    ** Global CSS
