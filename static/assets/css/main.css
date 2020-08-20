@@ -811,6 +811,7 @@ legend {
 }
 
 .s003 {
+  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -821,11 +822,15 @@ legend {
   background-position: center center;
   padding: 15px;
 }
+.s003 form {
+  width: 100%;
+}
 .s003 form .inner-form {
+  width: 100% !important;
   background: #fff;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: fit-content;
   -ms-flex-pack: justify;
       justify-content: space-between;
   -ms-flex-align: center;
@@ -835,11 +840,25 @@ legend {
 
 .s003 form .inner-form .input-field {
   height: 36px;
-  width: 400px;
+  width: 100%;
+}
+@media screen and (max-width: 747px) {
+  .d-waloo-drop,
+  .d-log-btn {
+    display: none !important;
+  }
+  .d-login-respo {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 999px) and (max-width: 1023px) {
+  .s003 form .inner-form .input-field {
+  }
 }
 
 .s003 form .inner-form .input-field input {
   height: 100%;
+  width: 100%;
   background: transparent;
   border: 0;
   display: block;
@@ -987,40 +1006,4 @@ legend {
 .s003 form .inner-form .input-field.third-wrap .btn-search:focus {
   outline: 0;
   box-shadow: none;
-}
-@media screen and (max-width: 767px) {
-  .s003 form .inner-form {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding: 20px;
-  }
-  .s003 form .inner-form .input-field {
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  .s003 form .inner-form .input-field input {
-    padding: 10px 15px;
-  }
-  .s003 form .inner-form .input-field.first-wrap {
-    width: 100%;
-    border-right: 0;
-  }
-  .s003 form .inner-form .input-field.first-wrap .choices__inner {
-    padding: 10px 15px;
-  }
-  .s003 form .inner-form .input-field.first-wrap .choices[data-type*="select-one"]:after {
-    right: 11.5px;
-    border-color: #e5e5e5 transparent transparent transparent;
-  }
-  .s003 form .inner-form .input-field.second-wrap {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  .s003 form .inner-form .input-field.second-wrap input {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  .s003 form .inner-form .input-field.third-wrap {
-    margin-bottom: 0;
-    width: 100%;
-  }
 }

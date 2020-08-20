@@ -1,19 +1,25 @@
 <template>
   <div class="header">
-    <Navbar />
+    <Navbar :scroll="scroll" />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  props: ['scroll'],
+  computed: {
+    isScrolled() {
+      if (this.scroll) return true
+      return false
+    },
+  },
+})
 </script>
 
 <style>
 .header {
   width: 100%;
-  padding-bottom: 1rem;
-  border-bottom: 0.5px solid #eeeeee;
 }
 </style>
