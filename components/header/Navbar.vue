@@ -77,7 +77,7 @@
                 </a>
               </div>
             </div>
-            <div class="is-flex d-fav-cart">
+            <div class="is-flex d-fav-cart mr-3">
               <div class="mr-2 navbar-item fav-fav mt-2">
                 <a class="favorite-ico">
                   <span v-if="hasFavorites" class="icon">
@@ -243,7 +243,9 @@ export default Vue.extend({
     display: none !important;
   }
   .d-login-respo {
+    position: relative;
     display: block !important;
+    right: 1rem !important;
   }
   .logo-search {
     width: 100% !important;
@@ -294,7 +296,7 @@ export default Vue.extend({
     margin-top: 0rem !important;
   }
   .waloo-nav {
-    padding-top: 0.7rem !important;
+    padding-top: 1rem !important;
   }
   .s003 {
     display: none !important;
@@ -305,7 +307,7 @@ export default Vue.extend({
     top: 0.1rem;
   }
   .d-login-respo {
-    margin-top: 0rem !important;
+    margin-top: 0.1rem !important;
   }
   .d-waloo-drop-cart-link {
     margin-top: -0.3rem !important;
