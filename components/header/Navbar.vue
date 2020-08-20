@@ -263,6 +263,9 @@ export default Vue.extend({
   color: rgb(255, 255, 255) !important;
 }
 @media screen and (max-width: 1023px) {
+  .waloo-nav {
+    padding-top: .5rem !important;
+  }
   .shop-d-cart {
     margin-top: 0.6rem;
   }
