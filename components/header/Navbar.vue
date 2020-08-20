@@ -250,7 +250,7 @@ export default Vue.extend({
   }
   .respo-waloo-drop {
     position: absolute;
-    left: -6rem !important;
+    left: -5.5rem !important;
   }
 }
 .total-shop {
