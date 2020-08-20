@@ -78,7 +78,7 @@
               </div>
             </div>
 
-            <div class="navbar-item">
+            <div class="navbar-item d-fav">
               <a class="mr-2 favorite-ico pt-2 mr-2">
                 <span v-if="hasFavorites" class="icon">
                   <i class="fas fa-heart" key="unstared"></i>
@@ -293,10 +293,6 @@ export default Vue.extend({
   }
   .d-login-respo {
     margin-top: 0.2rem !important;
-  }
-  .d-fav,
-  .d-waloo-drop-cart {
-    margin-top: -0.4rem !important;
   }
   .d-waloo-drop-cart-link {
     margin-top: -0.3rem !important;
