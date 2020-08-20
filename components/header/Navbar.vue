@@ -78,7 +78,7 @@
               </div>
             </div>
 
-            <div class="navbar-item d-fav">
+            <div class="navbar-item">
               <a class="mr-2 favorite-ico pt-2 mr-2">
                 <span v-if="hasFavorites" class="icon">
                   <i class="fas fa-heart" key="unstared"></i>
