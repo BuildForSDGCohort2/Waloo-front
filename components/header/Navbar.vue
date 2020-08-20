@@ -15,13 +15,42 @@
             </span>
           </a>
           <div class="navbar-item respo-search ml-2 is-hidden">
-            <a class="favorite-ico pt-2">
+            <a class="favorite-ico pt-2" @click="focused = !focused">
               <span class="icon">
                 <i class="fas fa-search"></i>
               </span>
             </a>
           </div>
-          <div class="s003">
+          <div class="s003 tohide-search is-hidden"
+          :class="{ 'search-focused': focused }">
+            <form autocomplete="off">
+              <div class="inner-form">
+                <a class="delete input-del" @click="focused = false"></a>
+                <div class="input-field second-wrap">
+                  <input
+                    id="search"
+                    class="respo-put"
+                    @focus="searchFocus"
+                    @blur="leaveFocus"
+                    type="text"
+                    placeholder="Make a search..."
+                  />
+                </div>
+                <div class="input-field third-wrap">
+                  <button
+                    class="btn-search"
+                    type="button"
+                    :class="{ 'has-focus': isFocused }"
+                  >
+                    <span class="icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="s003 ddd-search">
             <form autocomplete="off">
               <div class="inner-form">
                 <div class="input-field second-wrap">
@@ -180,6 +209,7 @@ export default Vue.extend({
     return {
       isFocused: false,
       hasFavorites: false,
+      focused: false,
     }
   },
   computed: {
@@ -191,9 +221,11 @@ export default Vue.extend({
   methods: {
     searchFocus(): void {
       this.isFocused = true
+      this.focused = true
     },
     leaveFocus(): void {
       this.isFocused = false
+      this.focused = false
     },
   },
 })
@@ -227,6 +259,9 @@ export default Vue.extend({
   border: #028300 !important;
   color: white !important;
 }
+.search-focused {
+  display: block !important;
+}
 .d-subscribe > div {
   font-size: 18px;
 }
@@ -253,6 +288,29 @@ export default Vue.extend({
     left: -5.5rem !important;
   }
 }
+.tohide-search {
+  position: absolute;
+  top: 2.5rem;
+}
+.input-del {
+  position: absolute;
+  left: 2rem;
+}
+.respo-put {
+  padding-left: 3rem !important;
+}
+.search-focused {
+  display: block;
+  animation: 0.3s appear2;
+}
+@media screen and (min-width: 611px) {
+  .tohide-search {
+    display: none !important;
+  }
+  .respo-search {
+    display: none !important;
+  }
+}
 .total-shop {
   position: absolute;
   top: 4px;
@@ -264,7 +322,7 @@ export default Vue.extend({
 }
 @media screen and (max-width: 1023px) {
   .waloo-nav {
-    padding-top: .5rem !important;
+    padding-top: 0rem !important;
   }
   .shop-d-cart {
     margin-top: 0.6rem;
@@ -308,7 +366,7 @@ export default Vue.extend({
   .waloo-nav {
     padding-top: 1rem !important;
   }
-  .s003 {
+  .ddd-search {
     display: none !important;
   }
   .respo-search {
