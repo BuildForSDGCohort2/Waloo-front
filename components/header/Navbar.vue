@@ -264,7 +264,7 @@ export default Vue.extend({
 }
 @media screen and (max-width: 1023px) {
   .shop-d-cart {
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
   }
   .navbar-dropdown {
     position: absolute;
