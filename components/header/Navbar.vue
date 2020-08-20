@@ -50,7 +50,7 @@
         </div>
         <div class="is-flex d-subscribe">
           <div class="is-flex">
-            <div class="navbar-item d-waloo-drop has-dropdown is-hoverable">
+            <div class="navbar-item d-waloo-drop has-dropdown is-hoverable mr-2">
               <a class="navbar-link waloo-link has-text-weight-semibold">
                 Waloo
               </a>
@@ -95,7 +95,7 @@
                   <i class="fas fa-shopping-cart"></i>
                 </span>
                 <span class="tag is-rounded span-number total-shop ml-2">
-                  99+
+                  21
                 </span>
               </a>
 
@@ -291,7 +291,7 @@ export default Vue.extend({
     animation: 0.3s stop;
   }
   .shop-d-cart {
-    margin-top: 0rem;
+    margin-top: 0.2rem;
   }
   .hasnt-scrolled {
     animation: 0.3s stop;
