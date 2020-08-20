@@ -21,8 +21,10 @@
               </span>
             </a>
           </div>
-          <div class="s003 tohide-search is-hidden"
-          :class="{ 'search-focused': focused }">
+          <div
+            class="s003 tohide-search is-hidden"
+            :class="{ 'search-focused': focused }"
+          >
             <form autocomplete="off">
               <div class="inner-form">
                 <a class="delete input-del" @click="focused = false"></a>
@@ -79,7 +81,9 @@
         </div>
         <div class="is-flex d-subscribe">
           <div class="is-flex">
-            <div class="navbar-item d-waloo-drop has-dropdown is-hoverable mr-2">
+            <div
+              class="navbar-item d-waloo-drop has-dropdown is-hoverable mr-2"
+            >
               <a class="navbar-link waloo-link has-text-weight-semibold">
                 Waloo
               </a>
@@ -321,8 +325,11 @@ export default Vue.extend({
   color: rgb(255, 255, 255) !important;
 }
 @media screen and (max-width: 1023px) {
+  .hasnt-scrolled {
+    animation: 0s appear2;
+  }
   .waloo-nav {
-    padding-top: 0rem !important;
+    padding-top: 0.3rem !important;
   }
   .shop-d-cart {
     margin-top: 0.6rem;
@@ -480,7 +487,7 @@ export default Vue.extend({
 }
 @keyframes disapear {
   0% {
-    transform: translateY(0.5px);
+    transform: translateY(0px);
   }
 }
 @keyframes stop {
