@@ -156,11 +156,11 @@
                 </a>
               </div>
             </div>
-            <div class="d-log-btn navbar-item">
+            <div class="d-log-btn navbar-item is-flex">
               <a class="a-login mr-2">
                 Log in
               </a>
-              <span class="mr-2 or"> or </span>
+              <span class="is-block mr-2 or"> or </span>
               <button class="button btn-subscribe">
                 Sign up
               </button>
@@ -233,6 +233,7 @@ export default Vue.extend({
 }
 .d-log-btn {
   font-size: 16px;
+  align-items: center;
 }
 @media screen and (max-width: 747px) {
   .d-waloo-drop,
