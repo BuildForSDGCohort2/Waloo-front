@@ -77,59 +77,56 @@
                 </a>
               </div>
             </div>
-            <div class="is-flex d-fav-cart mr-3">
-              <div class="mr-2 navbar-item fav-fav mt-2">
-                <a class="favorite-ico">
-                  <span v-if="hasFavorites" class="icon">
-                    <i class="fas fa-heart" key="unstared"></i>
-                  </span>
-                  <span v-else class="icon">
-                    <i class="far fa-heart" key="stared"></i>
-                  </span>
-                </a>
-              </div>
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a
-                  class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
-                >
-                  <span class="icon">
-                    <i class="fas fa-shopping-cart"></i>
-                  </span>
-                  <span class="tag is-rounded span-number total-shop ml-2">
-                    99+
-                  </span>
-                </a>
+            <div class="mr-2 navbar-item fav-fav mt-2 mr-3">
+              <a class="favorite-ico">
+                <span v-if="hasFavorites" class="icon">
+                  <i class="fas fa-heart" key="unstared"></i>
+                </span>
+                <span v-else class="icon">
+                  <i class="far fa-heart" key="stared"></i>
+                </span>
+              </a>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable mr-3">
+              <a
+                class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
+              >
+                <span class="icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
+                <span class="tag is-rounded span-number total-shop ml-2">
+                  99+
+                </span>
+              </a>
 
-                <div class="waloo-drop d-waloo-drop-cart navbar-dropdown box">
-                  <a class="navbar-item">
-                    <span class="icon"> <i class="fab fa-opencart"></i> </span
-                    ><span class="ml-1">My shopping cart</span>
-                    <span class="tag is-rounded span-number ml-2">
-                      19
-                    </span>
-                  </a>
-                  <a class="navbar-item">
-                    <span class="icon">
-                      <i class="fas fa-shopping-bag"></i> </span
-                    ><span class="ml-1">My orders</span>
-                    <span class="tag is-rounded span-number ml-2">
-                      2
-                    </span>
-                  </a>
-                  <a class="navbar-item">
-                    <span class="icon"> <i class="fas fa-history"></i> </span
-                    ><span class="ml-1">My shopping history</span>
-                  </a>
-                  <hr class="navbar-divider" />
-                  <a class="navbar-item">
-                    <span class="icon"> <i class="fas fa-trash"></i> </span
-                    ><span class="ml-1">Empty shopping cart</span>
-                  </a>
-                </div>
+              <div class="waloo-drop d-waloo-drop-cart navbar-dropdown box">
+                <a class="navbar-item">
+                  <span class="icon"> <i class="fab fa-opencart"></i> </span
+                  ><span class="ml-1">My shopping cart</span>
+                  <span class="tag is-rounded span-number ml-2">
+                    19
+                  </span>
+                </a>
+                <a class="navbar-item">
+                  <span class="icon"> <i class="fas fa-shopping-bag"></i> </span
+                  ><span class="ml-1">My orders</span>
+                  <span class="tag is-rounded span-number ml-2">
+                    2
+                  </span>
+                </a>
+                <a class="navbar-item">
+                  <span class="icon"> <i class="fas fa-history"></i> </span
+                  ><span class="ml-1">My shopping history</span>
+                </a>
+                <hr class="navbar-divider" />
+                <a class="navbar-item">
+                  <span class="icon"> <i class="fas fa-trash"></i> </span
+                  ><span class="ml-1">Empty shopping cart</span>
+                </a>
               </div>
             </div>
             <div
-              class="navbar-item is-hidden d-login-respo has-dropdown is-hoverable mt-3 mr-4"
+              class="navbar-item is-hidden d-login-respo has-dropdown is-hoverable mr-4"
             >
               <a class="navbar-link respo-link has-text-weight-semibold">
                 <span class="icon pr-2"> <i class="fas fa-user"></i> </span>
@@ -246,6 +243,7 @@ export default Vue.extend({
     position: relative;
     display: block !important;
     right: 1rem !important;
+    top: 0.9rem;
   }
   .logo-search {
     width: 100% !important;
@@ -257,7 +255,7 @@ export default Vue.extend({
 }
 .total-shop {
   position: absolute;
-  top: -10px;
+  top: 4px;
   left: 18px;
 }
 .navbar-item .span-number {
@@ -292,7 +290,7 @@ export default Vue.extend({
   .hasnt-scrolled {
     animation: 0.3s stop;
   }
-  .fav-fav  {
+  .fav-fav {
     margin-top: 0rem !important;
   }
   .waloo-nav {
@@ -307,7 +305,7 @@ export default Vue.extend({
     top: 0.1rem;
   }
   .d-login-respo {
-    margin-top: 0.1rem !important;
+    margin-top: -0.9rem !important;
   }
   .d-waloo-drop-cart-link {
     margin-top: -0.3rem !important;
