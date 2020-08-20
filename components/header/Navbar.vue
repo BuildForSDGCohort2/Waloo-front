@@ -87,7 +87,7 @@
                 </span>
               </a>
             </div>
-            <div class="navbar-item has-dropdown is-hoverable mr-3">
+            <div class="navbar-item has-dropdown shop-d-cart is-hoverable mr-3">
               <a
                 class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
               >
@@ -263,6 +263,9 @@ export default Vue.extend({
   color: rgb(255, 255, 255) !important;
 }
 @media screen and (max-width: 1023px) {
+  .shop-d-cart {
+    margin-top: 0.9rem;
+  }
   .navbar-dropdown {
     position: absolute;
     display: none !important;
@@ -286,6 +289,9 @@ export default Vue.extend({
   .has-scrolled {
     padding-top: 0rem !important;
     animation: 0.3s stop;
+  }
+  .shop-d-cart {
+    margin-top: 0rem;
   }
   .hasnt-scrolled {
     animation: 0.3s stop;
