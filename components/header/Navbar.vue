@@ -273,6 +273,9 @@ export default Vue.extend({
     position: absolute;
     display: none !important;
   }
+  .is-hoverable:hover .navbar-dropdown {
+    display: block !important;
+  }
   .d-waloo-drop {
     display: none !important;
   }
