@@ -14,7 +14,7 @@
               <span class="wa">Wa</span><span class="loo">loo</span>
             </span>
           </a>
-          <div class="navbar-item d-fav ml-2">
+          <div class="navbar-item respo-search ml-2 is-hidden">
             <a class="favorite-ico pt-2">
               <span class="icon">
                 <i class="fas fa-search"></i>
@@ -79,7 +79,7 @@
             </div>
 
             <div class="navbar-item d-fav">
-              <a class="mr-2 favorite-ico pt-2 mr-2">
+              <a class="mr-2 favorite-ico mr-2">
                 <span v-if="hasFavorites" class="icon">
                   <i class="fas fa-heart" key="unstared"></i>
                 </span>
@@ -290,6 +290,11 @@ export default Vue.extend({
   }
   .s003 {
     display: none !important;
+  }
+  .respo-search {
+    display: block !important;
+    position: relative;
+    top: 0.1rem;
   }
   .d-login-respo {
     margin-top: 0.2rem !important;
