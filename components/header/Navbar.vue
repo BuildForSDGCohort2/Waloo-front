@@ -212,10 +212,6 @@ export default Vue.extend({
   display: flex;
   justify-content: space-between;
 }
-.navbar-brand {
-  width: 50% !important;
-  justify-content: space-between;
-}
 .a-logo {
   width: fit-content;
   align-items: center;
@@ -264,6 +260,10 @@ export default Vue.extend({
   color: rgb(255, 255, 255) !important;
 }
 @media screen and (max-width: 1023px) {
+  .navbar-dropdown {
+    position: absolute;
+    display: none !important;
+  }
   .d-waloo-drop {
     display: none !important;
   }
