@@ -77,53 +77,55 @@
                 </a>
               </div>
             </div>
-
-            <div class="navbar-item d-fav">
-              <a class="mr-2 favorite-ico mr-2">
-                <span v-if="hasFavorites" class="icon">
-                  <i class="fas fa-heart" key="unstared"></i>
-                </span>
-                <span v-else class="icon">
-                  <i class="far fa-heart" key="stared"></i>
-                </span>
-              </a>
-            </div>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a
-                class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
-              >
-                <span class="icon">
-                  <i class="fas fa-shopping-cart"></i>
-                </span>
-                <span class="tag is-rounded span-number total-shop ml-2">
-                  99+
-                </span>
-              </a>
-
-              <div class="waloo-drop d-waloo-drop-cart navbar-dropdown box">
-                <a class="navbar-item">
-                  <span class="icon"> <i class="fab fa-opencart"></i> </span
-                  ><span class="ml-1">My shopping cart</span>
-                  <span class="tag is-rounded span-number ml-2">
-                    19
+            <div class="is-flex d-fav-cart">
+              <div class="mr-2 navbar-item fav-fav mt-2">
+                <a class="favorite-ico">
+                  <span v-if="hasFavorites" class="icon">
+                    <i class="fas fa-heart" key="unstared"></i>
+                  </span>
+                  <span v-else class="icon">
+                    <i class="far fa-heart" key="stared"></i>
                   </span>
                 </a>
-                <a class="navbar-item">
-                  <span class="icon"> <i class="fas fa-shopping-bag"></i> </span
-                  ><span class="ml-1">My orders</span>
-                  <span class="tag is-rounded span-number ml-2">
-                    2
+              </div>
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a
+                  class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
+                >
+                  <span class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                  </span>
+                  <span class="tag is-rounded span-number total-shop ml-2">
+                    99+
                   </span>
                 </a>
-                <a class="navbar-item">
-                  <span class="icon"> <i class="fas fa-history"></i> </span
-                  ><span class="ml-1">My shopping history</span>
-                </a>
-                <hr class="navbar-divider" />
-                <a class="navbar-item">
-                  <span class="icon"> <i class="fas fa-trash"></i> </span
-                  ><span class="ml-1">Empty shopping cart</span>
-                </a>
+
+                <div class="waloo-drop d-waloo-drop-cart navbar-dropdown box">
+                  <a class="navbar-item">
+                    <span class="icon"> <i class="fab fa-opencart"></i> </span
+                    ><span class="ml-1">My shopping cart</span>
+                    <span class="tag is-rounded span-number ml-2">
+                      19
+                    </span>
+                  </a>
+                  <a class="navbar-item">
+                    <span class="icon">
+                      <i class="fas fa-shopping-bag"></i> </span
+                    ><span class="ml-1">My orders</span>
+                    <span class="tag is-rounded span-number ml-2">
+                      2
+                    </span>
+                  </a>
+                  <a class="navbar-item">
+                    <span class="icon"> <i class="fas fa-history"></i> </span
+                    ><span class="ml-1">My shopping history</span>
+                  </a>
+                  <hr class="navbar-divider" />
+                  <a class="navbar-item">
+                    <span class="icon"> <i class="fas fa-trash"></i> </span
+                    ><span class="ml-1">Empty shopping cart</span>
+                  </a>
+                </div>
               </div>
             </div>
             <div
@@ -253,7 +255,7 @@ export default Vue.extend({
 }
 .total-shop {
   position: absolute;
-  top: 4px;
+  top: -10px;
   left: 18px;
 }
 .navbar-item .span-number {
@@ -277,6 +279,9 @@ export default Vue.extend({
     left: 18px;
   }
 }
+.d-fav-cart {
+  align-items: center;
+}
 @media screen and (max-width: 610px) {
   .has-scrolled {
     padding-top: 0rem !important;
@@ -284,6 +289,9 @@ export default Vue.extend({
   }
   .hasnt-scrolled {
     animation: 0.3s stop;
+  }
+  .fav-fav  {
+    margin-top: 0rem !important;
   }
   .waloo-nav {
     padding-top: 0.7rem !important;
@@ -297,7 +305,7 @@ export default Vue.extend({
     top: 0.1rem;
   }
   .d-login-respo {
-    margin-top: 0.2rem !important;
+    margin-top: 0rem !important;
   }
   .d-waloo-drop-cart-link {
     margin-top: -0.3rem !important;
