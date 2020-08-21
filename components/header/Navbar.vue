@@ -15,7 +15,7 @@
             </span>
           </a>
           <div class="navbar-item respo-search ml-2 is-hidden">
-            <a class="favorite-ico pt-2" @click="focused = !focused">
+            <a class="favorite-ico" @click="focused = !focused">
               <span class="icon">
                 <i class="fas fa-search"></i>
               </span>
