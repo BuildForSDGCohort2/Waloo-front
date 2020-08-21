@@ -851,11 +851,6 @@ legend {
     display: block !important;
   }
 }
-@media screen and (min-width: 999px) and (max-width: 1023px) {
-  .s003 form .inner-form .input-field {
-  }
-}
-
 .s003 form .inner-form .input-field input {
   height: 100%;
   width: 100%;
