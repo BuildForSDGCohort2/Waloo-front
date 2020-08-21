@@ -393,7 +393,7 @@ export default Vue.extend({
   .respo-search {
     display: block !important;
     position: relative;
-    top: 0.1rem;
+    top: 0rem;
   }
   .d-login-respo {
     margin-top: -0.9rem !important;
