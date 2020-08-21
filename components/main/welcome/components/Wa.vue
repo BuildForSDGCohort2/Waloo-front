@@ -50,7 +50,7 @@
           <div class="d-pre-btn">
             <button class="button pre-btn is-size-7">
               Learn more
-              <span class="icon pl-4 pt-1">
+              <span class="icon pl-4">
                 <i class="fas fa-arrow-right"></i>
               </span>
             </button>
@@ -76,7 +76,7 @@
           <div class="d-pre-btn">
             <button class="button pre-btn is-size-7">
               Learn more
-              <span class="icon pl-4 pt-1">
+              <span class="icon pl-4">
                 <i class="fas fa-arrow-right"></i>
               </span>
             </button>
