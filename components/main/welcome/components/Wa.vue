@@ -95,7 +95,7 @@ export default Vue.extend({})
 
 <style scoped>
 .wawa {
-  width: 60%;
+  width: 75%;
   position: relative;
   top: 5rem;
   padding-bottom: 6rem;

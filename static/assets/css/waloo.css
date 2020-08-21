@@ -1,6 +1,5 @@
 .card,
-.vvcard:hover,
-.vvicard {
+.vvcard:hover {
   border-radius: 5px;
 }
 .pre-img,
@@ -8,4 +7,7 @@
 .vvicard .prod-img {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+.is-clickable {
+  cursor: pointer;
 }
