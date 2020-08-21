@@ -111,7 +111,7 @@
                 </a>
               </div>
             </div>
-            <div class="navbar-item fav-fav">
+            <div class="navbar-item fav-fav mr-4">
               <a class="favorite-ico is-flex">
                 <span v-if="hasFavorites" class="icon is-block">
                   <i class="fas fa-heart" key="unstared"></i>
@@ -122,7 +122,7 @@
                 <span class="is-block pl-1 has-text-weight-semibold is-size-6">My List</span>
               </a>
             </div>
-            <div class="navbar-item has-dropdown shop-d-cart is-hoverable">
+            <div class="navbar-item has-dropdown shop-d-cart is-hoverable mr-4">
               <a
                 class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
               >
@@ -161,7 +161,7 @@
               </div>
             </div>
             <div
-              class="navbar-item is-hidden d-login-respo has-dropdown is-hoverable mr-4"
+              class="navbar-item is-hidden d-login-respo has-dropdown is-hoverable mr-6"
             >
               <a class="navbar-link respo-link has-text-weight-semibold">
                 <span class="icon pr-2"> <i class="fas fa-user"></i> </span>
@@ -353,6 +353,9 @@ export default Vue.extend({
   .total-shop {
     top: -9px;
     left: 18px;
+  }
+  .fav-fav {
+    margin-top: 1rem !important;
   }
 }
 .d-fav-cart {
