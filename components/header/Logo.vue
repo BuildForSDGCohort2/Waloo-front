@@ -35,7 +35,7 @@ import Vue from 'vue'
 export default Vue.extend({})
 </script>
 
-<style>
+<style scoped>
 .logo {
    transform: scale(1.1);
 }

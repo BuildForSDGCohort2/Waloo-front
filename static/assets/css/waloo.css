@@ -1,0 +1,11 @@
+.card,
+.vvcard:hover,
+.vvicard {
+  border-radius: 5px;
+}
+.pre-img,
+.vvcard:hover .prod-img,
+.vvicard .prod-img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}

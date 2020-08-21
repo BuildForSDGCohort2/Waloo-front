@@ -58,6 +58,7 @@
                 <div class="input-field second-wrap">
                   <input
                     id="search"
+                    class="ss-input"
                     @focus="searchFocus"
                     @blur="leaveFocus"
                     type="text"
@@ -110,17 +111,18 @@
                 </a>
               </div>
             </div>
-            <div class="mr-2 navbar-item fav-fav mt-2 mr-3">
-              <a class="favorite-ico">
-                <span v-if="hasFavorites" class="icon">
+            <div class="navbar-item fav-fav">
+              <a class="favorite-ico is-flex">
+                <span v-if="hasFavorites" class="icon is-block">
                   <i class="fas fa-heart" key="unstared"></i>
                 </span>
-                <span v-else class="icon">
+                <span v-else class="icon is-block">
                   <i class="far fa-heart" key="stared"></i>
                 </span>
+                <span class="is-block pl-1 has-text-weight-semibold is-size-6">My List</span>
               </a>
             </div>
-            <div class="navbar-item has-dropdown shop-d-cart is-hoverable mr-3">
+            <div class="navbar-item has-dropdown shop-d-cart is-hoverable">
               <a
                 class="navbar-link d-waloo-drop-cart-link waloo-link has-text-weight-semibold"
               >
@@ -235,7 +237,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped>
 .has-scrolled {
   padding-top: 0rem !important;
 }
@@ -356,6 +358,15 @@ export default Vue.extend({
 .d-fav-cart {
   align-items: center;
 }
+.ss-input,
+.respo-put {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.btn-search {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 @media screen and (max-width: 610px) {
   .has-scrolled {
     padding-top: 0rem !important;
@@ -405,7 +416,7 @@ export default Vue.extend({
 }
 .favorite-ico span svg,
 .fa-shopping-cart {
-  font-size: 23px;
+  font-size: 18px;
 }
 .favorite-ico:hover,
 .favorite-ico:focus,
@@ -413,13 +424,13 @@ export default Vue.extend({
   color: #028300;
 }
 .fa-user {
-  font-size: 15px;
+  font-size: 14px;
 }
 .respo-link {
   font-size: 16px;
 }
 .waloo-link {
-  font-size: 17px;
+  font-size: 16px;
 }
 .btn-logg {
   margin: 0 auto;

@@ -5,6 +5,11 @@
         <Header :scroll="scroll" />
       </div>
     </div>
+    <div class="wawa mt-1">
+      <div class="d-wawa">
+        <Home :scroll="scroll" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,7 +46,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped>
 .waloo {
   width: 100%;
   height: 1024px !important;
@@ -50,6 +55,15 @@ export default Vue.extend({
   width: 100% !important;
 }
 .has-scrolled {
-  box-shadow: 0 0.5em 1em -0.95em rgba(10, 10, 10, 0.1), 0 0px 0 0px rgba(10, 10, 10, 0.02);
+  box-shadow: 0 0.5em 1em -0.95em rgba(10, 10, 10, 0.1),
+    0 0px 0 0px rgba(10, 10, 10, 0.02);
+}
+.header-nav {
+  height: 82px;
+}
+@keyframes appear2 {
+  0% {
+    opacity: 0;
+  }
 }
 </style>
