@@ -161,6 +161,7 @@ export default Vue.extend({})
 <style scoped>
 .bewa {
   margin-top: 4rem;
+  margin: 0 auto;
 }
 .wal:hover {
   color: #028300 !important;

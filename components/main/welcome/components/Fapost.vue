@@ -59,6 +59,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.fapost {
+  margin: 0 auto;
+}
 .see-post {
   color: #028300;
 }

@@ -97,6 +97,7 @@ export default Vue.extend({})
 .wawa {
   width: 60%;
   margin-top: 5rem;
+  margin: 0 auto;
 }
 .card {
   padding-bottom: 1rem;
