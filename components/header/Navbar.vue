@@ -355,7 +355,7 @@ export default Vue.extend({
     left: 18px;
   }
   .fav-fav {
-    margin-top: 1rem !important;
+    margin-top: 0.7rem !important;
   }
 }
 .d-fav-cart {
