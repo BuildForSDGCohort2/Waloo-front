@@ -334,7 +334,7 @@ export default Vue.extend({
     padding-top: 0.3rem !important;
   }
   .shop-d-cart {
-    margin-top: 0.6rem;
+    margin-top: 0.7rem;
   }
   .navbar-dropdown {
     position: absolute;
