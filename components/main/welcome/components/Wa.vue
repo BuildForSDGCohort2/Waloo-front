@@ -1,5 +1,5 @@
 <template>
-  <div class="wawa container">
+  <div class="wawa container mt-6">
     <h6 class="title is-6 has-text-centered">
       Buy from your favourites farmers, sell your products directly to consumer
       or invest in a farmer.
@@ -96,7 +96,9 @@ export default Vue.extend({})
 <style scoped>
 .wawa {
   width: 60%;
-  margin-top: 5rem;
+  position: relative;
+  top: 5rem;
+  padding-bottom: 6rem;
   margin: 0 auto;
 }
 .card {

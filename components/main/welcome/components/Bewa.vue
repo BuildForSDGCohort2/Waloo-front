@@ -160,6 +160,8 @@ export default Vue.extend({})
 
 <style scoped>
 .bewa {
+  position: relative;
+  top: 3rem;
   margin-top: 4rem;
   margin: 0 auto;
 }
