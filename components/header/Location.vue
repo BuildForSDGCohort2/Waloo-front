@@ -32,6 +32,7 @@
             {{ country }}
           </a>
           <hr class="navbar-divider" />
+          <hr class="pyay-hr is-hidden">
           <a
             v-for="(country, index) in countries"
             :key="index"
