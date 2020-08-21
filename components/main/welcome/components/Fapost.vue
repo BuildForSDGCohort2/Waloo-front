@@ -11,15 +11,15 @@
         <div class="df-post">
           <div v-for="i in 4" :key="i">
             <div class="vvicard">
-              <div class="level">
+              <div class="card-content">
+                <div class="level">
                   <div class="level-left">
-                      <div class="level-item">
-                          dcd
-                      </div>
+                    <div class="level-item">
+                      
+                    </div>
                   </div>
-                  <div class="level-right">
-
-                  </div>
+                  <div class="level-right"></div>
+                </div>
               </div>
               <div class="card-image">
                 <figure class="image is-4by3">
@@ -31,6 +31,7 @@
                 </figure>
               </div>
               <div class="card-content">
+                gb
                 <div class="content">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Phasellus nec iaculis mauris.
