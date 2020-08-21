@@ -9,7 +9,7 @@
           <a class="is-size-7 pl-1 see-post">See others posts</a>
         </div>
         <div class="df-post">
-          <div v-for="j in [9,7]" :key="j">
+          <div v-for="j in [9, 7]" :key="j">
             <div class="vvicard">
               <div class="card-content">
                 <div class="far-head is-flex">
@@ -97,8 +97,8 @@
                     controls
                     preload="none"
                     poster="/videos/poster.jpg"
-                    data-setup="{}" 
-                    onclick="this.play()"
+                    data-setup="{}"
+                    onclick="if(this.playing) this.pause(); else this.play();"
                   >
                     <source
                       src="/videos/camilo-pablo-alboran-el-mismo-aire-official-video.mp4"
@@ -257,6 +257,11 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
+  data() {
+    return {
+      isPlaying: false,
+    }
+  },
   props: ['scroll'],
   computed: {
     isScrolled() {
@@ -292,7 +297,7 @@ export default Vue.extend({
   cursor: pointer;
 }
 .d-likes span {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 .d-likes:hover {
   color: #028300;
