@@ -14,9 +14,7 @@
               <div class="card-content">
                 <div class="level">
                   <div class="level-left">
-                    <div class="level-item">
-                      
-                    </div>
+                    <div class="level-item"></div>
                   </div>
                   <div class="level-right"></div>
                 </div>
@@ -69,7 +67,42 @@ export default Vue.extend({
   text-decoration: underline;
 }
 .df-post {
-  width: 500px;
+  width: 46%;
   margin: 0 auto;
+}
+@media screen and (max-width: 1023px) {
+  .df-post {
+    width: 48%;
+  }
+}
+@media screen and (max-width: 1215px) {
+  .df-post {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 970px) {
+  .df-post {
+    width: 57%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .df-post {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 747px) {
+  .df-post {
+    width: 73%;
+  }
+}
+@media screen and (max-width: 620px) {
+  .df-post {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .df-post {
+    width: 90%;
+  }
 }
 </style>
