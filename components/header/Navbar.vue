@@ -57,7 +57,7 @@
               <div class="inner-form">
                 <div class="input-field second-wrap">
                   <input
-                    id="search"
+                    id="searchd"
                     class="ss-input"
                     @focus="searchFocus"
                     @blur="leaveFocus"

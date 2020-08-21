@@ -11,3 +11,9 @@
 .is-clickable {
   cursor: pointer;
 }
+.is-color-db {
+  color: #dbdbdb;
+}
+.is-color-4a {
+  color: #4a4a4a;
+}

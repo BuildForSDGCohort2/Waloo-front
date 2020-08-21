@@ -4,9 +4,9 @@
       <div class="card-content post-content">
         <div class="is-flex tittle has-text-weight-semibold">
           <h6 class="title is-6">
-            Some posts from farmers
+            Some posts from ours users
           </h6>
-          <a class="is-size-7 pl-1 see-post">See others posts</a>
+          <a class="is-size-7 pl-2 see-post">Go to post's page</a>
         </div>
         <div class="df-post">
           <div v-for="j in [9, 7]" :key="j">
@@ -336,18 +336,24 @@ export default Vue.extend({
   border-right: 1px solid #dbdbdb;
   border-top: 1px solid #dbdbdb;
   overflow: scroll;
+  padding-left: 5px;
   overflow-x: hidden;
   position: relative;
   top: 0.5rem;
   margin: 0 auto;
 }
 ::-webkit-scrollbar {
-  width: 0px; /* Remove scrollbar space */
+  width: 5px; /* Remove scrollbar space */
+  border-radius: 10px;
+  animation: 0.2s appear;
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: transparent;
+}
+.df-post:hover::-webkit-scrollbar-thumb {
+  background: #028300;
 }
 .ico-enter {
   width: 48px;
@@ -360,7 +366,8 @@ export default Vue.extend({
 .from-farm {
   margin-top: -0.3rem;
 }
-.prod-img {
+.prod-img,
+video {
   border: 1px solid #dbdbdb;
   border-radius: 5px;
 }
