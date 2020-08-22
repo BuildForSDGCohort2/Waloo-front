@@ -104,6 +104,10 @@ export default Vue.extend({})
 }
 .db-prod {
   height: 773px;
+  border: 1px solid #dbdbdb;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-radius: 5px;
   overflow: scroll;
   padding-left: 5px;
   overflow-x: hidden;
