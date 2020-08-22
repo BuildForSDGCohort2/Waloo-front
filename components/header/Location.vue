@@ -12,8 +12,7 @@
           aria-haspopup="true"
           aria-controls="dropdown-menu"
         >
-          <span class="icon is-color-4a">
-            <i class="fas fa-flag"></i> </span
+          <span class="icon is-color-4a"> <i class="fas fa-flag"></i> </span
           ><span class=""> {{ curcountry }}</span>
           <span class="icon is-small pt-1">
             <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -23,6 +22,9 @@
       <div class="dropdown-menu" id="dropdown-menu" role="menu">
         <div class="dropdown-content">
           <div class="sp-pa ttop"></div>
+          <span class="has-text-weight-semibold is-size-6 pl-4"
+            >Continents</span
+          >
           <a
             v-for="country in continents"
             :key="country"
@@ -32,7 +34,8 @@
             {{ country }}
           </a>
           <hr class="navbar-divider" />
-          <hr class="pyay-hr is-hidden">
+          <div class="sp-pa ttop"></div>
+          <span class="has-text-weight-semibold is-size-6 pl-4">Countries</span>
           <a
             v-for="(country, index) in countries"
             :key="index"
@@ -101,6 +104,10 @@ export default Vue.extend({
 .location,
 .dropdown-menu {
   z-index: 999;
+}
+.sp-pa {
+  width: 100%;
+  height: 5px;
 }
 .dropdown-menu {
   height: 625px;
