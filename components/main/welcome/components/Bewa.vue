@@ -33,90 +33,14 @@
         </div>
       </div>
       <div class="column">
-        <div class="card">
+        <div class="card most-card">
           <div class="card-content">
             <div class="is-size-6 has-text-weight-semibold">
               <h6 class="title is-6">
                 Most requested
               </h6>
               <div class="columns is-multiline db-prod">
-                <div class="column prod-taille">
-                  <div class="vvcard">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img
-                          class="prod-img"
-                          src="https://bulma.io/images/placeholders/1280x960.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column prod-taille">
-                  <div class="vvcard">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img
-                          class="prod-img"
-                          src="https://bulma.io/images/placeholders/1280x960.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column prod-taille">
-                  <div class="vvcard">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img
-                          class="prod-img"
-                          src="https://bulma.io/images/placeholders/1280x960.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column prod-taille">
-                  <div class="vvcard">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img
-                          class="prod-img"
-                          src="https://bulma.io/images/placeholders/1280x960.png"
-                          alt="Placeholder image"
-                        />
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="column prod-taille">
+                <div v-for="i in 10" :key="i" class="column prod-taille">
                   <div class="vvcard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -174,6 +98,28 @@ export default Vue.extend({})
 .prod-taille {
   flex: none;
   width: 33%;
+}
+.most-card {
+  padding-bottom: 3rem;
+}
+.db-prod {
+  height: 773px;
+  overflow: scroll;
+  padding-left: 5px;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 5px; /* Remove scrollbar space */
+  border-radius: 10px;
+  animation: 0.2s appear;
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.db-prod:hover::-webkit-scrollbar-thumb {
+  background: #028300;
 }
 .vvcard:hover {
   cursor: pointer;

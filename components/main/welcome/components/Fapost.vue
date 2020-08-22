@@ -20,18 +20,31 @@
                         src="https://crosscut.com/sites/default/files/styles/max_2000x2000/public/images/articles/veronica_001.jpg"
                         alt="Image"
                       />
+                      <span class="icon ico-check checks">
+                        <i class="fas fa-check-circle"></i>
+                      </span>
                     </div>
                     <div class="far-info pl-3">
                       <div>
                         <div>
                           <a class="is-size-6 is-block has-text-weight-semibold"
-                            >John Son</a
+                            >John Son
+                            <a
+                              class="is-size-7 is-farmer is-color-4a has-text-weight-normal"
+                              >Farmer</a
+                            ></a
                           >
-                          <span class="is-size-7 is-block from-farm"
-                            >From Pretoria</span
-                          >
+                          <span class="is-size-7 is-block from-farm is-flex"
+                            ><span class="is-block">From Pretoria</span
+                            ><a
+                              target="_blank"
+                              href="https://www.google.fr/maps/place/Abidjan"
+                              class="is-block icon ico-check pl-1"
+                            >
+                              <i class="fas fa-location-arrow"></i> </a
+                          ></span>
                         </div>
-                        <div>
+                        <div class="hh-post">
                           <span class="has-text-weight-semibold is-size-7"
                             >2 h &bull;</span
                           >
@@ -149,13 +162,35 @@
                       <div>
                         <div>
                           <a class="is-size-6 is-block has-text-weight-semibold"
-                            >John Farmer</a
+                            >John Farmer<!-- <span class="icon ico-check">
+                              <i class="fas fa-check-circle"></i>
+                            </span> -->
+                            <a
+                              class="is-size-7 is-farmer is-color-4a has-text-weight-normal"
+                              >Consumer</a
+                            ></a
                           >
-                          <span class="is-size-7 is-block from-farm"
-                            >From Kigali</span
+                          <span class="is-size-7 is-block from-farm is-flex"
+                            ><span class="is-block">From Abidjan</span
+                            ><a
+                              target="_blank"
+                              href="https://www.google.fr/maps/place/Abidjan"
+                              class="is-block icon ico-check pl-1"
+                            >
+                              <i class="fas fa-location-arrow"></i> </a
+                            ><span class="is-block inline-part"
+                              ><strong>Partnership renew </strong>with<strong
+                                ><a> John</a></strong
+                              ></span
+                            ></span
+                          >
+                          <span class="is-size-7 is-block from-farm partenariat is-hidden"
+                            ><strong>Partnership renew </strong>with<strong
+                              ><a> John</a></strong
+                            ></span
                           >
                         </div>
-                        <div>
+                        <div class="hh-post">
                           <span class="has-text-weight-semibold is-size-7"
                             >2 h &bull;</span
                           >
@@ -299,6 +334,22 @@ export default Vue.extend({
 .d-likes span {
   margin: 0 auto;
 }
+.fa-check-circle {
+  color: #326ee6;
+  font-size: 14px;
+  position: relative;
+  top: -0.05rem !important;
+}
+.fa-location-arrow {
+  color: #028300;
+}
+.hh-post {
+  margin-top: -0.3rem;
+}
+.is-farmer:hover {
+  color: #028300 !important;
+  text-decoration: underline;
+}
 .d-likes:hover {
   color: #028300;
   background-color: #0283000e;
@@ -358,13 +409,26 @@ export default Vue.extend({
 .ico-enter {
   width: 48px;
   height: 48px;
+  border-radius: 290486px;
 }
 .d-ico-enter {
   width: fit-content;
   height: fit-content;
 }
+.checks {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 3.9rem;
+  background-color: white;
+  border: white 1px solid;
+  border-radius: 290486px;
+}
+.partenariat {
+  margin-top: -0.28rem !important;
+}
 .from-farm {
-  margin-top: -0.3rem;
+  margin-top: -0.1rem;
 }
 .prod-img,
 video {
@@ -404,6 +468,14 @@ video {
 @media screen and (max-width: 567px) {
   .df-post {
     width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .inline-part {
+    display: none !important;
+  }
+  .partenariat {
+    display: block !important;
   }
 }
 @keyframes appear {
