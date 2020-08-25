@@ -6,6 +6,19 @@
       </div>
     </div>
     <div>
+      <article
+        v-if="this.$store.state.hasAccountUnOpened"
+        class="mb-6 message is-d-centered is-danger fited-width is-border-radius-5px"
+      >
+        <div class="message-header">
+          <p>Email is already used or something went wrong.</p>
+          <button
+            @click="close"
+            class="delete ml-2"
+            aria-label="delete"
+          ></button>
+        </div>
+      </article>
       <AuthForm ref="authformregis" :textbtn="'Register'" :hasname="true" />
     </div>
   </div>
@@ -47,6 +60,9 @@ export default Vue.extend({
       } else {
         this.scroll = false
       }
+    },
+    close() {
+      this.$store.commit('accountUnopend', false)
     },
   },
 })

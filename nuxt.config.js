@@ -77,8 +77,24 @@ export default {
       callback: '/login',
       home: '/',
     },
+    local: {
+      token: {
+        property: 'token',
+        // required: true,
+        // type: 'Bearer'
+      },
+      user: {
+        property: 'user',
+        // autoFetch: true
+      },
+      endpoints: {
+        login: { url: '/api/login', method: 'post' },
+        // logout: { url: '/api/logout', method: 'post' },
+        // user: { url: '/api/user', method: 'get' },
+      },
+    },
     strategies: {
-      'laravelSanctum': {
+      laravelSanctum: {
         provider: 'laravel/sanctum',
         url: 'https://farmer-to-consumer.herokuapp.com',
       },
@@ -92,6 +108,13 @@ export default {
   axios: {
     baseURL: 'https://farmer-to-consumer.herokuapp.com',
     credentials: true,
+    proxy: true,
+  },
+  proxy: {
+    '/laravel': {
+      target: 'https://laravel-auth.nuxtjs.app',
+      pathRewrite: { '^/laravel': '/' },
+    },
   },
   /*
    ** Content module configuration

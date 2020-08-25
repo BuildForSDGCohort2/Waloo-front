@@ -77,7 +77,11 @@
             placeholder="Your password"
             v-model="password"
           />
-          <span key="stared" v-if="pwdequal" class="icon is-small is-green is-right">
+          <span
+            key="stared"
+            v-if="pwdequal"
+            class="icon is-small is-green is-right"
+          >
             <i class="fas fa-check"></i>
           </span>
         </p>
@@ -104,7 +108,11 @@
             placeholder="Your password confirmation"
             v-model="password_confirmation"
           />
-          <span key="okstared" v-if="pwdequal" class="icon is-small is-green is-right">
+          <span
+            key="okstared"
+            v-if="pwdequal"
+            class="icon is-small is-green is-right"
+          >
             <i class="fas fa-check"></i>
           </span>
         </p>
@@ -121,13 +129,7 @@
       </div>
       <div v-if="hasname" class="field">
         <input
-          v-if="
-            emailValid &&
-            namefill &&
-            validPwd &&
-            validPwdconf &&
-            pwdequal
-          "
+          v-if="emailValid && namefill && validPwd && validPwdconf && pwdequal"
           type="submit"
           class="button btn-subscribe"
           value="Create an account"
@@ -190,14 +192,14 @@ export default {
       return (
         this.password.length >= 8 &&
         this.password_confirmation.length >= 8 &&
-        (this.password === this.password_confirmation)
+        this.password === this.password_confirmation
       )
     },
     notpwdequal() {
       return (
         this.password.length >= 8 &&
         this.password_confirmation.length >= 8 &&
-        (this.password_confirmation !== this.password)
+        this.password_confirmation !== this.password
       )
     },
     validEmail() {
@@ -234,25 +236,26 @@ export default {
         this.namefill = true
       }
     },
-    checkExistence() {
-      this.emailExist = true
-      this.$axios
-        .$post('api/emailExistence', {
-          email: this.email,
-        })
-        .then((response) => {
-          this.emailUsed = response == 0 ? true : false
-          this.emailExist = response == 0 ? true : false
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    },
+    // checkExistence() {
+    //   this.emailExist = true
+    //   this.$axios
+    //     .$post('api/emailExistence', {
+    //       email: this.email,
+    //     })
+    //     .then((response) => {
+    //       this.emailUsed = response == 0 ? true : false
+    //       this.emailExist = response == 0 ? true : false
+    //     })
+    //     .catch((error) => {
+    //       console.log(error)
+    //     })
+    // },
     submit() {
       if (this.hasname) this.register()
       else this.login()
     },
     register() {
+      this.$store.commit('accountUnopend', false)
       this.$axios
         .$post('api/register', {
           email: this.email,
@@ -263,6 +266,10 @@ export default {
         .then((response) => {
           this.$store.commit('account', true)
           this.$router.push('/login')
+        })
+        .catch((error) => {
+          console.log(error)
+          this.$store.commit('accountUnopend', true)
         })
     },
     async login() {
