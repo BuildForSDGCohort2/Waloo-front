@@ -70,17 +70,29 @@ export default {
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
-  router: {
-    middleware: ['auth']
-  },
   auth: {
-    // Options
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/',
+    },
+    strategies: {
+      'laravelSanctum': {
+        provider: 'laravel/sanctum',
+        url: 'https://farmer-to-consumer.herokuapp.com',
+      },
+    },
+    localStorage: false,
   },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://farmer-to-consumer.herokuapp.com',
+    credentials: true,
+  },
   /*
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration

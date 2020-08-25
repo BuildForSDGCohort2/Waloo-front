@@ -6,7 +6,11 @@
       </div>
     </div>
     <div>
-      <AuthForm :submit="register" :textbtn="'Register'" :hasname="true" />
+      <AuthForm
+        ref="authformregis"
+        :textbtn="'Register'"
+        :hasname="true"
+      />
     </div>
   </div>
 </template>
@@ -19,6 +23,8 @@ export default Vue.extend({
   data() {
     return {
       scroll: false,
+      result: null,
+      issue: false,
     }
   },
   computed: {
@@ -41,9 +47,6 @@ export default Vue.extend({
         this.scroll = false
       }
     },
-    register() {
-      alert('registering')
-    },
   },
 })
 </script>
@@ -52,6 +55,7 @@ export default Vue.extend({
 .waloo {
   width: 100%;
   height: 1024px !important;
+  animation: 0.3s appear2;
 }
 .navbar {
   width: 100% !important;

@@ -6,7 +6,20 @@
       </div>
     </div>
     <div>
-      <AuthForm :submit="login" :textbtn="'Login'" :hasname="false" />
+      <article
+        v-if="this.$store.state.hasAccountOpened"
+        class="mb-6 message is-d-centered is-success fited-width is-border-radius-5px"
+      >
+        <div class="message-header">
+          <p>Accounted created ✔.</p>
+          <button
+            @click="close"
+            class="delete ml-2"
+            aria-label="delete"
+          ></button>
+        </div>
+      </article>
+      <AuthForm ref="authformlog" :textbtn="'Login'" :hasname="false" />
     </div>
   </div>
 </template>
@@ -41,8 +54,8 @@ export default Vue.extend({
         this.scroll = false
       }
     },
-    login() {
-      alert('loging')
+    close() {
+      this.$store.commit('account', false)
     },
   },
 })
@@ -52,6 +65,7 @@ export default Vue.extend({
 .waloo {
   width: 100%;
   height: 1024px !important;
+  animation: 0.3s appear2;
 }
 .navbar {
   width: 100% !important;
