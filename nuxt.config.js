@@ -65,10 +65,17 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
+  router: {
+    middleware: ['auth']
+  },
+  auth: {
+    // Options
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

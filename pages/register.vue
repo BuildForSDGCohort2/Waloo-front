@@ -1,12 +1,12 @@
 <template>
-  <div class="waloo">
+  <div class="waloo mt-6">
     <div class="header-nav">
       <div class="navbar is-fixed-top" :class="{ 'has-scrolled': isScrolled }">
         <Header :scroll="scroll" />
       </div>
     </div>
     <div>
-
+      <AuthForm :submit="register" :textbtn="'Register'" :hasname="true" />
     </div>
   </div>
 </template>
@@ -40,6 +40,9 @@ export default Vue.extend({
       } else {
         this.scroll = false
       }
+    },
+    register() {
+      alert('registering')
     },
   },
 })

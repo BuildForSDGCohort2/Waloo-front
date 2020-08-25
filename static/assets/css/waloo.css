@@ -17,6 +17,21 @@
 .is-color-4a {
   color: #4a4a4a;
 }
+.is-red {
+  color: red;
+}
+.is-green,
+.fa-check{
+  color: #028300 !important;
+}
+.has-outline-green:focus,
+.has-outline-green:active {
+  outline-color: #028300 !important;
+  border-color: #028300 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 1023px) {
   .pyay-hr {
     display: block !important;

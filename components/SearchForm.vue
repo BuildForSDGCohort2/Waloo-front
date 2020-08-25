@@ -1,46 +1,30 @@
 <template>
-  <div
-    class="pt-4 container waloo-nav"
-    :class="{ 'has-scrolled': isScrolled, 'hasnt-scrolled': !isScrolled }"
-  >
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="d-search">
-        <div class="is-flex logo-search">
-          <nuxt-link class="a-logo is-flex" to="/">
-            <Logo class="ml-1" />
-            <span
-              class="is-block logo-text ml-2 is-size-4 has-text-weight-semibold"
-            >
-              <span class="wa">Wa</span><span class="loo">loo</span>
-            </span>
-          </nuxt-link>
-          <SearchForm />
+  <div class="s003">
+    <form autocomplete="off">
+      <div class="inner-form">
+        <div class="input-field second-wrap">
+          <input
+            id="searchd"
+            class="ss-input"
+            @focus="searchFocus"
+            @blur="leaveFocus"
+            type="text"
+            placeholder="Make a search..."
+          />
         </div>
-
-        <div class="is-flex">
-          <div class="is-flex centered">
-            <nuxt-link v-if="$auth.loggedIn" to="/product" class="button btn-subscribe">
-              <span class="icon">
-                <i class="fas fa-plus"></i>
-              </span>
-              <span>Add product</span>
-            </nuxt-link>
-            <div v-if="$auth.loggedIn" class="navbar-item centered is-flex">
-              <span>Bonjour, {{$auth.user.name}}</span>
-            </div>
-            <div v-else class="navbar-item centered is-flex">
-              <nuxt-link to="/login" class="a-login mr-2">
-                Log in
-              </nuxt-link>
-              <span class="is-block mr-2 or"> or </span>
-              <nuxt-link to="/register" class="button btn-subscribe">
-                Sign up
-              </nuxt-link>
-            </div>
-          </div>
+        <div class="input-field third-wrap">
+          <button
+            class="btn-search"
+            type="button"
+            :class="{ 'has-focus': isFocused }"
+          >
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </button>
         </div>
       </div>
-    </nav>
+    </form>
   </div>
 </template>
 
@@ -76,6 +60,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.s003 {
+  width: 100% !important;
+}
 .centered {
   justify-items: center;
   align-items: center;

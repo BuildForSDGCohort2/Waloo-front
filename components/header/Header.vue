@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <Location />
+    <!-- <Location /> -->
     <Navbar :scroll="scroll" />
   </div>
 </template>
