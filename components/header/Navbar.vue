@@ -8,11 +8,11 @@
         <div class="is-flex logo-search">
           <nuxt-link class="a-logo is-flex" to="/">
             <Logo class="ml-1" />
-            <span
+            <!-- <span
               class="is-block logo-text ml-2 is-size-4 has-text-weight-semibold"
             >
-              <span class="wa">Wa</span><span class="loo">loo</span>
-            </span>
+              <span class="wa">Wa</span><span class="loo">loo by Yaya</span>
+            </span> -->
           </nuxt-link>
           <SearchForm />
         </div>
@@ -92,7 +92,7 @@ export default Vue.extend({
   justify-content: space-between;
 }
 .a-logo {
-  width: fit-content;
+  width: auto;
   align-items: center;
   color: #000000;
 }
