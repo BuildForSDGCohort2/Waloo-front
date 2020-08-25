@@ -6,11 +6,7 @@
       </div>
     </div>
     <div>
-      <AuthForm
-        ref="authformregis"
-        :textbtn="'Register'"
-        :hasname="true"
-      />
+      <AuthForm ref="authformregis" :textbtn="'Register'" :hasname="true" />
     </div>
   </div>
 </template>
@@ -38,6 +34,11 @@ export default Vue.extend({
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
+  },
+  mounted() {
+    this.$axios.defaults.withCredentials = true
+    this.$axios.setHeader('Content-Type', 'application/json')
+    this.$axios.setHeader('Accept', 'application/json')
   },
   methods: {
     handleScroll() {

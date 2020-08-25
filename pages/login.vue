@@ -46,6 +46,11 @@ export default Vue.extend({
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll)
   },
+  mounted() {
+    this.$axios.defaults.withCredentials = true
+    this.$axios.setHeader('Content-Type', 'application/json')
+    this.$axios.setHeader('Accept', 'application/json')
+  },
   methods: {
     handleScroll() {
       if (window.scrollY > 0) {
