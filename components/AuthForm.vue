@@ -275,6 +275,7 @@ export default {
         })
     },
     async login() {
+      this.$store.commit('noAuth', false)
       this.error = {}
       try {
         let response = await this.$auth
@@ -285,7 +286,7 @@ export default {
             },
           })
           .catch((error) => {
-            console.log('welcome')
+            this.$store.commit('noAuth', true)
           })
         this.$auth.setUser(response.data.user)
         this.$auth.setUserToken(response.data.token)

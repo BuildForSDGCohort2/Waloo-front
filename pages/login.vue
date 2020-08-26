@@ -7,6 +7,19 @@
     </div>
     <div>
       <article
+        v-if="this.$store.state.hasFailedAuth"
+        class="mb-6 message is-d-centered is-danger fited-width is-border-radius-5px"
+      >
+        <div class="message-header">
+          <p>Email or password incorrect.</p>
+          <button
+            @click="close"
+            class="delete ml-2"
+            aria-label="delete"
+          ></button>
+        </div>
+      </article>
+      <article
         v-if="this.$store.state.hasAccountOpened"
         class="mb-6 message is-d-centered is-success fited-width is-border-radius-5px"
       >
@@ -61,6 +74,7 @@ export default Vue.extend({
     },
     close() {
       this.$store.commit('account', false)
+      this.$store.commit('noAuth', false)
     },
   },
 })
