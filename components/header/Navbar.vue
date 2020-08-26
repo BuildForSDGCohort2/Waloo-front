@@ -14,7 +14,7 @@
               <span class="wa">Wa</span><span class="loo">loo by Yaya</span>
             </span> -->
           </nuxt-link>
-          <SearchForm />
+          <SearchForm class="search-form" />
         </div>
 
         <div class="is-flex">
@@ -22,7 +22,7 @@
             <nuxt-link
               v-if="$auth.loggedIn"
               to="/product"
-              class="button btn-subscribe mr-6"
+              class="button add-pro btn-subscribe"
             >
               <span class="icon">
                 <i class="fas fa-plus"></i>
@@ -30,10 +30,12 @@
               <span>Add product</span>
             </nuxt-link>
             <div v-if="$auth.loggedIn" class="navbar-item centered is-flex">
-              <span class="is-block">Hi, {{ $auth.user.name | capitalize }}</span>
+              <span class="is-block"
+                >Hi, {{ $auth.user.name | capitalize }}</span
+              >
               <button
                 @click="$auth.logout()"
-                class="button ml-3 has-no-border is-green"
+                class="button ml-2 has-no-border is-green"
               >
                 <span class="icon"> <i class="fas fa-sign-out-alt"></i> </span
                 ><span>Log out</span>
@@ -260,6 +262,17 @@ export default Vue.extend({
   }
   .d-waloo-drop-cart-link {
     margin-top: -0.3rem !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .search-form {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .search-form,
+  .add-pro {
+    display: none !important;
   }
 }
 .d-subscribe .navbar-link:hover,
