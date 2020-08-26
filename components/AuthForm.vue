@@ -288,8 +288,7 @@ export default {
           .catch((error) => {
             this.$store.commit('noAuth', true)
           })
-        this.$auth.setUser(response.data.user)
-        this.$auth.setUserToken(response.data.token)
+        console.log(this.$auth.user)
         // Redirect user after login
         this.$router.push({
           path: '/',

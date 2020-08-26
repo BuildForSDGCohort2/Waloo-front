@@ -79,31 +79,16 @@ export default {
     },
     strategies: {
       local: {
-        token: {
-          property: 'token',
-          // required: true,
-          // type: 'Bearer'
-        },
-        user: {
-          property: 'user',
-          // autoFetch: true
-        },
         endpoints: {
           login: { url: '/api/login', method: 'post' },
           logout: { url: '/api/logout', method: 'post' },
-          // user: { url: '/api/auth/user', method: 'get' }
-        }
-      },
-      // local: {
-      //   endpoints: {
-      //     login: { url: '/api/login', method: 'post' },
-      //     // logout: { url: '/api/logout', method: 'post' },
-      //     // user: { url: '/api/user', method: 'get' },
-      //   },
-      // },
-      laravelSanctum: {
-        provider: 'laravel/sanctum',
-        url: 'https://farmer-to-consumer.herokuapp.com',
+          user: { url: '/api/user', method: 'get' },
+          //false,
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        autoFetchUser: false,
       },
     },
     localStorage: false,

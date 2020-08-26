@@ -5,9 +5,7 @@
         <Header :scroll="scroll" />
       </div>
     </div>
-    <div>
-
-    </div>
+    <div></div>
   </div>
 </template>
 
