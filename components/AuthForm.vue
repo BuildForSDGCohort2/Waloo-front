@@ -3,9 +3,9 @@
     <form @submit.prevent="submit" class="container form" autocomplete="off">
       <div class="field">
         <h5 v-if="!hasname" class="title is-5 is-block ml-2 pb-4">
-          Log in the application.
+          Log in.
         </h5>
-        <h5 v-else class="title is-5 is-block ml-2 pb-4">Create an account.</h5>
+        <h5 v-else class="title is-5 is-block ml-2 pb-4">Sign up.</h5>
       </div>
       <div v-if="hasname" class="field">
         <p class="control">
@@ -277,14 +277,16 @@ export default {
     async login() {
       this.error = {}
       try {
-        let response = await this.$auth.loginWith('local', {
-          data: {
-            email: this.email,
-            password: this.password,
-          },
-        }).catch((error)=>{
-          console.log("welcome")
-        })
+        let response = await this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.email,
+              password: this.password,
+            },
+          })
+          .catch((error) => {
+            console.log('welcome')
+          })
         this.$auth.setUser(response.data.user)
         this.$auth.setUserToken(response.data.token)
         // Redirect user after login
@@ -318,5 +320,20 @@ export default {
 }
 .fa-times {
   color: red !important;
+}
+@media screen and (max-width: 766px) {
+  .form {
+    width: 50% !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .form {
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .form {
+    width: 80% !important;
+  }
 }
 </style>
