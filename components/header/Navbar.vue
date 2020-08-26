@@ -19,14 +19,25 @@
 
         <div class="is-flex">
           <div class="is-flex centered">
-            <nuxt-link v-if="$auth.loggedIn" to="/product" class="button btn-subscribe">
+            <nuxt-link
+              v-if="$auth.loggedIn"
+              to="/product"
+              class="button btn-subscribe mr-6"
+            >
               <span class="icon">
                 <i class="fas fa-plus"></i>
               </span>
               <span>Add product</span>
             </nuxt-link>
             <div v-if="$auth.loggedIn" class="navbar-item centered is-flex">
-              <span>Bonjour, {{$auth.user.name}}</span>
+              <span class="is-block">Hi, {{ $auth.user.name | capitalize }}</span>
+              <button
+                @click="$auth.logout()"
+                class="button ml-3 has-no-border is-green"
+              >
+                <span class="icon"> <i class="fas fa-sign-out-alt"></i> </span
+                ><span>Log out</span>
+              </button>
             </div>
             <div v-else class="navbar-item centered is-flex">
               <nuxt-link to="/login" class="a-login mr-2">
@@ -70,6 +81,13 @@ export default Vue.extend({
     leaveFocus(): void {
       this.isFocused = false
       this.focused = false
+    },
+  },
+  filters: {
+    capitalize(value: string) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
     },
   },
 })

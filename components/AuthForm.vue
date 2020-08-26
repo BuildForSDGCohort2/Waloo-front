@@ -252,7 +252,9 @@ export default {
     // },
     submit() {
       if (this.hasname) this.register()
-      else this.login()
+      else {
+        this.login()
+      }
     },
     register() {
       this.$store.commit('accountUnopend', false)
@@ -275,17 +277,23 @@ export default {
     async login() {
       this.error = {}
       try {
-        await this.$auth.loginWith('local', {
-          email: this.email,
-          password: this.password,
+        let response = await this.$auth.loginWith('local', {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        }).catch((error)=>{
+          console.log("welcome")
         })
-
+        this.$auth.setUser(response.data.user)
+        this.$auth.setUserToken(response.data.token)
         // Redirect user after login
         this.$router.push({
           path: '/',
         })
       } catch (err) {
         this.error = err
+        console.log(err)
         // do something with error
       }
     },

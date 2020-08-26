@@ -19,7 +19,7 @@
           ></button>
         </div>
       </article>
-      <AuthForm ref="authformlog" :textbtn="'Login'" :hasname="false" />
+      <AuthForm :textbtn="'Login'" :hasname="false" />
     </div>
   </div>
 </template>

@@ -20,6 +20,9 @@
 .is-red {
   color: red !important;
 }
+.has-no-border {
+  border: none !important;
+}
 .is-border-radius-5px {
   border-radius: 5px;
 }

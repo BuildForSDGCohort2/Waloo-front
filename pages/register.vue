@@ -19,7 +19,7 @@
           ></button>
         </div>
       </article>
-      <AuthForm ref="authformregis" :textbtn="'Register'" :hasname="true" />
+      <AuthForm :textbtn="'Register'" :hasname="true" />
     </div>
   </div>
 </template>
