@@ -79,16 +79,21 @@ export default {
     },
     strategies: {
       local: {
+        token: {
+          property: 'token',
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          autoFetch: false
+        },
         endpoints: {
           login: { url: '/api/login', method: 'post' },
           logout: { url: '/api/logout', method: 'post' },
-          user: { url: '/api/user', method: 'get' },
+          user: false,
           //false,
         },
-        // tokenRequired: true,
-        // tokenType: 'bearer',
-        // globalToken: true,
-        autoFetchUser: false,
       },
     },
     localStorage: false,

@@ -206,6 +206,9 @@ export default {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email)
     },
   },
+  // mounted() {
+  //   console.log(this.$auth.user)
+  // },
   methods: {
     checkEmail(e) {
       if (this.email === '') {
@@ -288,7 +291,7 @@ export default {
           .catch((error) => {
             this.$store.commit('noAuth', true)
           })
-        console.log(this.$auth.user)
+        this.$auth.setUser(response.data.user)
         // Redirect user after login
         this.$router.push({
           path: '/',

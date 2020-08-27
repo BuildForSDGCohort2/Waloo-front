@@ -57,7 +57,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 
 export default Vue.extend({
@@ -75,18 +75,33 @@ export default Vue.extend({
       return false
     },
   },
+  created() {
+    window.addEventListener('beforeunload', this.handleReresh)
+  },
+  mounted() {
+    if (this.$auth.loggedIn) {
+      if (localStorage.user) {
+        let user = JSON.parse(localStorage.getItem('user'))
+        this.$auth.setUser(user)
+      }
+    }
+    localStorage.removeItem('user')
+  },
   methods: {
-    searchFocus(): void {
+    handleReresh() {
+      localStorage.setItem('user', JSON.stringify(this.$auth.user))
+    },
+    searchFocus() {
       this.isFocused = true
       this.focused = true
     },
-    leaveFocus(): void {
+    leaveFocus() {
       this.isFocused = false
       this.focused = false
     },
   },
   filters: {
-    capitalize(value: string) {
+    capitalize(value) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
