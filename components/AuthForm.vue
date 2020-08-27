@@ -281,18 +281,12 @@ export default {
       this.$store.commit('noAuth', false)
       this.error = {}
       try {
-        let response = await this.$auth
-          .loginWith('local', {
-            data: {
-              email: this.email,
-              password: this.password,
-            },
-          })
-          .catch((error) => {
-            this.$store.commit('noAuth', true)
-          })
-        this.$auth.setUser(response.data.user)
-        // Redirect user after login
+        await this.$auth.loginWith('local', {
+          data: {
+            email: this.email,
+            password: this.password,
+          },
+        })
         this.$router.push({
           path: '/',
         })

@@ -65,12 +65,13 @@ export default {
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next',
+    '@nuxtjs/auth',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
   ],
   auth: {
+    localStorage: false,
     redirect: {
       login: '/login',
       logout: '/',
@@ -79,24 +80,21 @@ export default {
     },
     strategies: {
       local: {
-        token: {
-          property: 'token',
-          // required: true,
-          // type: 'Bearer'
-        },
-        user: {
-          property: 'user',
-          autoFetch: false
-        },
         endpoints: {
-          login: { url: '/api/login', method: 'post' },
+          login: {
+            url: '/api/login',
+            method: 'post',
+            propertyName: 'token',
+          },
           logout: { url: '/api/logout', method: 'post' },
-          user: false,
-          //false,
+          user: { url: '/api/user', method: 'get', propertyName: false },
         },
+        // tokenRequired: true,
+        // tokenType: 'bearer',
+        // globalToken: true,
+        //autoFetchUser: true
       },
     },
-    localStorage: false,
   },
   /*
    ** Axios module configuration

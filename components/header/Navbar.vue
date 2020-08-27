@@ -75,22 +75,7 @@ export default Vue.extend({
       return false
     },
   },
-  created() {
-    window.addEventListener('beforeunload', this.handleReresh)
-  },
-  mounted() {
-    if (this.$auth.loggedIn) {
-      if (localStorage.user) {
-        let user = JSON.parse(localStorage.getItem('user'))
-        this.$auth.setUser(user)
-      }
-    }
-    localStorage.removeItem('user')
-  },
   methods: {
-    handleReresh() {
-      localStorage.setItem('user', JSON.stringify(this.$auth.user))
-    },
     searchFocus() {
       this.isFocused = true
       this.focused = true
