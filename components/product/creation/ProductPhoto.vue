@@ -60,7 +60,7 @@
           <span
             v-if="notImage"
             class="pl-4 mt-2 is-block is-red is-size-7 has-text-weight-semibold"
-            >Image is required with size < 5MB</span
+            >Image is required with size &lt; 5MB</span
           >
         </div>
       </div>
