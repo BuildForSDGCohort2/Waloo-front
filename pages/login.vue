@@ -84,7 +84,7 @@ export default Vue.extend({
 .body {
   background-color: #fff;
   padding: 5% 2% 5% 2%;
-  width: 80%;
+  width: 60%;
 }
 .waloo {
   width: 100%;
@@ -100,6 +100,21 @@ export default Vue.extend({
 }
 .header-nav {
   height: 82px;
+}
+@media screen and (max-width: 1024px) {
+  .body {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .body {
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 540px) {
+  .body {
+    width: 100% !important;
+  }
 }
 @keyframes appear2 {
   0% {

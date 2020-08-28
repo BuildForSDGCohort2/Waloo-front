@@ -20,7 +20,13 @@
         <div class="is-flex">
           <div class="is-flex centered">
             <nuxt-link
-              v-if="$auth.loggedIn && this.$route.path !== '/product' && this.$route.path !== '/product/'"
+              v-if="
+                $auth.loggedIn &&
+                this.$route.path !== '/product' &&
+                this.$route.path !== '/product/' &&
+                this.$route.path !== '/product/add' &&
+                this.$route.path !== '/product/add/'
+              "
               to="/product"
               class="button add-pro btn-subscribe"
             >

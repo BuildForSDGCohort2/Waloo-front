@@ -1,10 +1,12 @@
 <template>
   <div class="body container box">
     <h1 class="has-text-weight-semibold is-size-6">Adding product</h1>
-    <hr>
+    <hr />
     <form class="mb-6">
-    <h1 class="has-text-weight-semibold is-size-7 mt-2">Fill farm's information</h1>
-      <hr>
+      <h1 class="has-text-weight-semibold is-size-7 mt-2">
+        Fill farm's informations
+      </h1>
+      <hr />
       <FarmPhoto class="f-pic mb-5 mt-5" />
       <div class="body-farm mb-4">
         <div class="field">
@@ -50,7 +52,11 @@
       <div class="btn-save is-pulled-right">
         <div class="field">
           <p class="control has-icons-right">
-            <button type="button" class="button btn-subscribe pr-6">
+            <button
+              type="button"
+              @click="continuer"
+              class="button btn-subscribe pr-6"
+            >
               Save and continue
             </button>
             <span class="icon is-white btn-right">
@@ -79,6 +85,11 @@ export default Vue.extend({
   },
   methods: {
     submit() {},
+    continuer() {
+      this.$router.push({
+        path: '/product/add',
+      })
+    },
   },
 })
 </script>

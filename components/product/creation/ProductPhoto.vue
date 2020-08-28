@@ -2,59 +2,64 @@
   <div class="container">
     <div class="picture is-flex justy-between">
       <div class="is-flex">
-        <figure @click="openImage" class="is-clickable image is-64x64">
-          <img class="is-rounded my-pic has-a-border" :src="image" />
-        </figure>
-        <div class="modal" :class="{ 'is-active': open }">
-          <div class="modal-background"></div>
-          <div class="modal-content full-width">
-            <p class="image">
-              <img
-                class="is-border-radius-5px c-fig is-d-centered"
-                :src="image"
-                alt=""
-              />
-            </p>
+        <div>
+          <figure @click="openImage" class="is-clickable image">
+            <img
+              class="my-pic has-a-border is-border-radius-5px"
+              :src="image"
+            />
+          </figure>
+          <div class="modal" :class="{ 'is-active': open }">
+            <div class="modal-background"></div>
+            <div class="modal-content full-width">
+              <p class="image">
+                <img
+                  class="is-border-radius-5px c-fig is-d-centered"
+                  :src="image"
+                  alt=""
+                />
+              </p>
+            </div>
+            <button
+              type="button"
+              @click.prevent="openImage"
+              class="modal-close is-large"
+              aria-label="close"
+            ></button>
           </div>
-          <button
-            type="button"
-            @click.prevent="openImage"
-            class="modal-close is-large"
-            aria-label="close"
-          ></button>
+          <input
+            id="fileid"
+            @change="changeImage"
+            key="this"
+            type="file"
+            ref="file"
+            name="file"
+            hidden
+          />
         </div>
-        <input
-          id="fileid"
-          @change="changeImage"
-          key="this"
-          type="file"
-          ref="file"
-          name="file"
-          hidden
-        />
-        <div class="is-flex is-col-flex">
-          <a
-            @click="uploadFile"
-            class="my-add-btn is-block ml-4 has-text-weight-semibold"
-          >
-            <span class="icons box add-btn mr-2">
-              <i class="fas fa-plus"></i>
-            </span>
-            <span class="is-size-7">Add a picture</span>
-          </a>
-          <a
-            v-if="remove"
-            @click="removeImage"
-            class="my-add-btn d-remove is-block mr-5 pr-1 is-flex-self-start has-text-weight-semibold"
-          >
-            <span class="icons box is-red add-btn mr-2">
-              <i class="fas fa-minus"></i>
-            </span>
-            <span class="is-size-7">Remove</span>
-          </a>
+        <div class="is-flex is-col-flex flext-start">
+          <div>
+            <a
+              @click="uploadFile" title="Add a picture"
+              class="my-add-btn is-block ml-4 has-text-weight-semibold"
+            >
+              <span class="icons box add-btn mr-2">
+                <i class="fas fa-plus"></i>
+              </span>
+            </a>
+            <a
+              v-if="remove" title="remove the picture"
+              @click="removeImage"
+              class="mt-4 my-add-btn ml-4 d-remove is-block is-flex-self-start has-text-weight-semibold"
+            >
+              <span class="icons box is-red add-btn mr-2">
+                <i class="fas fa-minus"></i>
+              </span>
+            </a>
+          </div>
           <span
             v-if="notImage"
-            class="is-block is-red is-size-7 has-text-weight-semibold"
+            class="pl-4 mt-2 is-block is-red is-size-7 has-text-weight-semibold"
             >Image is required with size < 5MB</span
           >
         </div>
@@ -72,10 +77,8 @@ export default Vue.extend({
       remove: false,
       notImage: false,
       file: '',
-      image:
-        'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg',
-      imageSaved:
-        'https://i0.wp.com/www.repol.copl.ulaval.ca/wp-content/uploads/2019/01/default-user-icon.jpg',
+      image: '/images/cart.png',
+      imageSaved: '/images/cart.png',
     }
   },
   methods: {
@@ -172,9 +175,9 @@ export default Vue.extend({
   background: #027900 !important;
   border: #027900 !important;
 }
-figure {
-  width: fit-content;
-  height: fit-content;
+.zz {
+  width: 200px !important;
+  height: fit-content !important;
 }
 .my-add-btn {
   height: fit-content;
@@ -183,8 +186,11 @@ figure {
   color: black;
 }
 .my-pic {
-  width: 64px !important;
-  height: 64px !important;
+  width: 128px !important;
+  height: 128px !important;
+}
+.dd-inf {
+  width: 50% !important;
 }
 .fa-plus {
   color: #028300;

@@ -309,7 +309,7 @@ export default {
 
 <style scoped>
 .form {
-  width: 30%;
+  width: 40%;
 }
 .btn-subscribe {
   background: #028300 !important;
