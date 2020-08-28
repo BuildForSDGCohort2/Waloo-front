@@ -1,3 +1,9 @@
+body {
+  background-color: #f5f5f5 !important;
+}
+.m-centered {
+  margin: 0 auto;
+}
 .card,
 .vvcard:hover {
   border-radius: 5px;
@@ -10,6 +16,12 @@
 }
 .is-clickable {
   cursor: pointer;
+}
+.is-flex-self-end {
+  align-self: flex-end;
+}
+.justy-between {
+  justify-content: space-between;
 }
 .is-color-db {
   color: #dbdbdb;
@@ -35,7 +47,11 @@
 .is-white {
   color: white !important;
 }
+.full-width {
+  width: 90% !important;
+}
 .is-d-centered {
+  width: fit-content !important;
   margin: 0 auto !important;
 }
 .has-a-border {
@@ -48,7 +64,7 @@
   background-color: white !important;
 }
 .is-green,
-.fa-check{
+.fa-check {
   color: #028300 !important;
 }
 .has-outline-green:focus,

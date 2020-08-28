@@ -5,6 +5,9 @@
         <Header :scroll="scroll" />
       </div>
     </div>
+    <div>
+      <nuxt-child />
+    </div>
   </div>
 </template>
 
@@ -12,7 +15,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  auth: false,
+  middleware: 'auth',
   data() {
     return {
       scroll: false,

@@ -2,10 +2,10 @@
   <div>
     <form @submit.prevent="submit" class="container form" autocomplete="off">
       <div class="field">
-        <h5 v-if="!hasname" class="title is-5 is-block ml-2 pb-4">
+        <h5 v-if="!hasname" class="title is-5 is-block pb-4">
           Log in.
         </h5>
-        <h5 v-else class="title is-5 is-block ml-2 pb-4">Sign up.</h5>
+        <h5 v-else class="title is-5 is-block pb-4">Sign up.</h5>
       </div>
       <div v-if="hasname" class="field">
         <p class="control">
@@ -127,17 +127,17 @@
           >
         </p>
       </div>
-      <div v-if="hasname" class="field">
+      <div v-if="hasname" class="field has-text-centered">
         <input
           v-if="emailValid && namefill && validPwd && validPwdconf && pwdequal"
           type="submit"
-          class="button btn-subscribe"
+          class="button btn-subscribe is-d-centered"
           value="Create an account"
         />
         <input
           v-else
           type="submit"
-          class="button btn-subscribe"
+          class="button btn-subscribe is-d-centered"
           value="Create an account"
           disabled
         />
@@ -281,18 +281,25 @@ export default {
       this.$store.commit('noAuth', false)
       this.error = {}
       try {
-        await this.$auth.loginWith('local', {
-          data: {
-            email: this.email,
-            password: this.password,
-          },
-        })
-        this.$router.push({
-          path: '/',
-        })
+        await this.$auth
+          .loginWith('local', {
+            data: {
+              email: this.email,
+              password: this.password,
+            },
+          })
+          .then(() => {
+            this.$router.push({
+              path: '/',
+            })
+          })
+          .catch(() => {
+            this.$store.commit('noAuth', true)
+          })
       } catch (err) {
         this.error = err
         console.log(err)
+        this.$store.commit('noAuth', true)
         // do something with error
       }
     },

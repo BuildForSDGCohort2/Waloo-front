@@ -5,7 +5,7 @@
         <Header :scroll="scroll" />
       </div>
     </div>
-    <div>
+    <div class="body container box">
       <article
         v-if="this.$store.state.hasAccountUnOpened"
         class="mb-6 message is-d-centered is-danger fited-width is-border-radius-5px"
@@ -69,6 +69,11 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.body {
+  background-color: #fff;
+  padding: 5% 2% 5% 2%;
+  width: 80%;
+}
 .waloo {
   width: 100%;
   height: 1024px !important;
